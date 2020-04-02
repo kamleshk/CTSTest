@@ -18,16 +18,19 @@ class ListViewController: UIViewController {
         return viewModel
     }()
     
-    
+    private let refreshControl = UIRefreshControl()
+
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
         self.addingObserver()
         self.observerError()
-        self.viewModel.fetchList()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        refreshTable()
+    }
     // Autolayout constraints function
     func setupAutoLayout() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,12 +55,24 @@ class ListViewController: UIViewController {
         self.view.addSubview(tableView)
         self.setupAutoLayout()
         self.tableView.dataSource = self.dataSource
+            // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(self.refreshTable), for: .valueChanged)
     }
     // ading listiner for data modification
     func addingObserver(){
     self.dataSource.data.addAndNotify(observer: self) { [weak self ] _ in
         self?.tableView.reloadData()
+        self?.refreshControl.endRefreshing()
      }
+        
+        self.viewModel.messagePassing = { title in
+            self.title = title
+        }
     }
     
     // adding error observer
@@ -69,6 +84,9 @@ class ListViewController: UIViewController {
             controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
             self?.present(controller, animated: true, completion: nil)
         }
+    }
+   @objc func refreshTable()  {
+        self.viewModel.fetchList()
     }
 
 }

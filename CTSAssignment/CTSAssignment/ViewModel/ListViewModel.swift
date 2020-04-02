@@ -14,7 +14,7 @@ struct ListViewModel {
      var service : FactServiceProtocol?
     
     var onErrorHandling : ((ErrorResult?) -> Void)?
-    
+    var messagePassing : ((_ title:String) -> Void)!
     init(service: FactServiceProtocol , dataSource : GenericDataSource<Rows>) {
         self.dataSource = dataSource
         self.service = service
@@ -33,6 +33,7 @@ struct ListViewModel {
                 switch result {
                 case .success(let factsModel) :
                     print(factsModel)
+                    self.messagePassing?(factsModel.title)
                     self.dataSource?.data.value = factsModel.rows
                 case .failure(let error) :
                     self.onErrorHandling?(error)
