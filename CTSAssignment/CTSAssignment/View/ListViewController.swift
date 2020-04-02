@@ -50,6 +50,7 @@ class ListViewController: UIViewController {
         self.setupAutoLayout()
         self.tableView.dataSource = self.dataSource
     }
+    // ading listiner for data modification
     func addingObserver(){
     self.dataSource.data.addAndNotify(observer: self) { [weak self ] _ in
         self?.tableView.reloadData()

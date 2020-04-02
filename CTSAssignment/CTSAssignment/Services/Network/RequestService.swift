@@ -18,11 +18,7 @@ final class RequestService {
             return nil
         }
         
-        var request = RequestFactory.request(method: .GET, url: url)
-        
-        if let reachability = Reachability(), !reachability.isReachable {
-            request.cachePolicy = .returnCacheDataDontLoad
-        }
+        let request = RequestFactory.request(method: .GET, url: url)
         
         let task = session.dataTask(with: request) { (data, response, error) in
             if let error = error {

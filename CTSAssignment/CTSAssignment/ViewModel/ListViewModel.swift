@@ -27,7 +27,7 @@ struct ListViewModel {
             return
         }
         
-        service.fetchConverter { result in
+        service.fetchFactsList { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let factsModel) :

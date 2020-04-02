@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FactServiceProtocol : class {
-    func fetchConverter(_ completion: @escaping ((Result<Facts, ErrorResult>) -> Void))
+    func fetchFactsList(_ completion: @escaping ((Result<Facts, ErrorResult>) -> Void))
 }
 
 final class FactListService : RequestHandler, FactServiceProtocol {
@@ -19,7 +19,7 @@ final class FactListService : RequestHandler, FactServiceProtocol {
     let endpoint = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     var task : URLSessionTask?
     
-    func fetchConverter(_ completion: @escaping ((Result<Facts, ErrorResult>) -> Void)) {
+    func fetchFactsList(_ completion: @escaping ((Result<Facts, ErrorResult>) -> Void)) {
         
         // cancel previous request if already in progress
         self.cancelFetchCurrencies()

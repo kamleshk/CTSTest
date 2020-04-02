@@ -57,7 +57,7 @@ class ListTableViewCell: UITableViewCell {
     fileprivate func addconstraintsdescription(_ marginGuide: UILayoutGuide) {
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         detailLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor).isActive = true
-        detailLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 20).isActive = true
+        detailLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: -10).isActive = true
         detailLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         detailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         detailLabel.numberOfLines = 0

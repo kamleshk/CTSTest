@@ -14,7 +14,7 @@ class GenericDataSource<T> : NSObject {
 }
 
 class ListDataSource : GenericDataSource<Rows>, UITableViewDataSource {
-    
+    // data source method
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -26,14 +26,9 @@ class ListDataSource : GenericDataSource<Rows>, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListTableViewCell//CurrencyCell
-        
-      // let rowModel = self.data.value[indexPath.row]
         cell.rowModel = self.data.value[indexPath.row]
-       // cell.backgroundColor = .green
         return cell
     }
-    
-    
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return (UITableView.automaticDimension > 100) ? UITableView.automaticDimension : 100
