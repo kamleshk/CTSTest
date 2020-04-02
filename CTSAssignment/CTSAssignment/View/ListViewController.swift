@@ -10,17 +10,9 @@ import UIKit
 
 class ListViewController: UIViewController {
 
-    var tableView : UITableView = {
-        let tableview = UITableView()
-        tableview.translatesAutoresizingMaskIntoConstraints = false
-        tableview.backgroundColor = .white
-        tableview.estimatedRowHeight = 100
-        tableview.rowHeight = UITableView.automaticDimension
-        tableview.register(ListTableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableview
-    }()
+   
     
-    var dataSource = ListDataSource()
+   var dataSource = ListDataSource()
    lazy var viewModel : ListViewModel = {
         let viewModel = ListViewModel(service: FactListService(), dataSource: dataSource)
         return viewModel
@@ -33,10 +25,10 @@ class ListViewController: UIViewController {
         self.setupUi()
         self.addingObserver()
         self.observerError()
-        self.viewModel.fetchCurrencies()
+        self.viewModel.fetchList()
     }
 
-    
+    // Autolayout constraints function
     func setupAutoLayout() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -44,7 +36,18 @@ class ListViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
+    // seeting up uitableview
+    var tableView : UITableView = {
+        let tableview = UITableView()
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        tableview.backgroundColor = .white
+        tableview.estimatedRowHeight = 100
+        tableview.rowHeight = UITableView.automaticDimension
+        tableview.register(ListTableViewCell.self, forCellReuseIdentifier: "cell")
+        return tableview
+    }()
     
+    // ui setup function
     func setupUi()  {
         self.view.addSubview(tableView)
         self.setupAutoLayout()
@@ -57,6 +60,7 @@ class ListViewController: UIViewController {
      }
     }
     
+    // adding error observer
     func observerError()  {
         // add error handling example
         self.viewModel.onErrorHandling = { [weak self] error in

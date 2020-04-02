@@ -11,16 +11,17 @@ import Foundation
 struct ListViewModel {
     
      var dataSource : GenericDataSource<Rows>?
-     var service: FactServiceProtocol?
+     var service : FactServiceProtocol?
     
     var onErrorHandling : ((ErrorResult?) -> Void)?
     
-    init(service: FactServiceProtocol /*= CurrencyService.shared*/, dataSource : GenericDataSource<Rows>) {
+    init(service: FactServiceProtocol , dataSource : GenericDataSource<Rows>) {
         self.dataSource = dataSource
         self.service = service
     }
     
-    func fetchCurrencies() {
+    // function calling list api
+    func fetchList() {
         
         guard let service = service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))

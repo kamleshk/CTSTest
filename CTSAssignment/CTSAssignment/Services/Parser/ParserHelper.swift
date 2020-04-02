@@ -57,8 +57,6 @@ final class ParserHelper {
             let dataL  = dataStr.data(using: .utf8)!
             if let dictionary = try JSONSerialization.jsonObject(with: dataL , options: [] ) as? [String: AnyObject] {
                 
-                // init final result
-                // check foreach dictionary if parseable
                 switch T.parseObject(dictionary: dictionary) {
                 case .failure(let error):
                     completion(.failure(error))
