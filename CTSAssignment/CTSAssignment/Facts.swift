@@ -15,15 +15,15 @@ struct Facts {
 extension Facts : Parceable {
     static func parseObject(dictionary: [String : AnyObject]) -> Result<Facts, ErrorResult> {
       if  let  title  = dictionary["title"]  as? String,
-          let rows = dictionary["rows"] as? [[String:String]] {
+          let rows = dictionary["rows"] as? [[String:AnyObject]] {
         
         let finalRates : [Rows] = rows.compactMap { (dict) -> Rows? in
-            return Rows(title: dict["title"] ?? "", description: dict["description"] ?? "", imageHref: dict["imageHref"] ?? "")
+            return Rows(title: dict["title"] as? String ?? "", description: dict["description"] as? String ?? "", imageHref: dict["imageHref"] as? String ?? "")
         }
       let facts = Facts(title: title, rows: finalRates)
         return Result.success(facts)
       } else {
-        return Result.failure(ErrorResult.parser(string: "Unable to parse conversion rate"))
+        return Result.failure(ErrorResult.parser(string: "Unable to parse"))
       }
     }
     
