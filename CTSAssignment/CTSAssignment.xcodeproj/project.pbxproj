@@ -28,6 +28,7 @@
 		570AD3E024367C6800B5F0EA /* ListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3DF24367C6800B5F0EA /* ListServiceTest.swift */; };
 		570AD3E224367D7B00B5F0EA /* ListDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3E124367D7B00B5F0EA /* ListDataSourceTest.swift */; };
 		570AD3E424367F5600B5F0EA /* ListModelViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3E324367F5600B5F0EA /* ListModelViewTest.swift */; };
+		570AD3E7243684E500B5F0EA /* Extension_UiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3E6243684E500B5F0EA /* Extension_UiImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		570AD3DF24367C6800B5F0EA /* ListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceTest.swift; sourceTree = "<group>"; };
 		570AD3E124367D7B00B5F0EA /* ListDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSourceTest.swift; sourceTree = "<group>"; };
 		570AD3E324367F5600B5F0EA /* ListModelViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModelViewTest.swift; sourceTree = "<group>"; };
+		570AD3E6243684E500B5F0EA /* Extension_UiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UiImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				570AD3922436183600B5F0EA /* AppDelegate.swift */,
+				570AD3E5243684A800B5F0EA /* Resource */,
 				570AD3D42436749700B5F0EA /* View */,
 				570AD3D32436747A00B5F0EA /* ViewModel */,
 				570AD3D22436745A00B5F0EA /* Model */,
@@ -187,6 +190,14 @@
 				570AD3DA2436784400B5F0EA /* FileDataService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		570AD3E5243684A800B5F0EA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				570AD3E6243684E500B5F0EA /* Extension_UiImageView.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				570AD3CA2436362200B5F0EA /* FactListService.swift in Sources */,
 				570AD3C82436355800B5F0EA /* ListDataSource.swift in Sources */,
 				570AD3B9243628E900B5F0EA /* RequestHandler.swift in Sources */,
+				570AD3E7243684E500B5F0EA /* Extension_UiImageView.swift in Sources */,
 				570AD3BC24362D3400B5F0EA /* ParserHelper.swift in Sources */,
 				570AD3C42436301800B5F0EA /* Facts.swift in Sources */,
 				570AD3B72436289500B5F0EA /* RequestService.swift in Sources */,
