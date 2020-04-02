@@ -13,6 +13,7 @@ struct Facts {
     let rows:[Rows]
 }
 extension Facts : Parceable {
+    // parsing the response which we had got from api
     static func parseObject(dictionary: [String : AnyObject]) -> Result<Facts, ErrorResult> {
       if  let  title  = dictionary["title"]  as? String,
           let rows = dictionary["rows"] as? [[String:AnyObject]] {

@@ -17,7 +17,6 @@
 		570AD3B9243628E900B5F0EA /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3B8243628E900B5F0EA /* RequestHandler.swift */; };
 		570AD3BC24362D3400B5F0EA /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3BB24362D3400B5F0EA /* ParserHelper.swift */; };
 		570AD3C024362E6400B5F0EA /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3BF24362E6400B5F0EA /* DynamicValue.swift */; };
-		570AD3C224362E9B00B5F0EA /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 570AD3C124362E9A00B5F0EA /* sample.json */; };
 		570AD3C42436301800B5F0EA /* Facts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3C32436301800B5F0EA /* Facts.swift */; };
 		570AD3C62436349A00B5F0EA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3C52436349A00B5F0EA /* ListViewModel.swift */; };
 		570AD3C82436355800B5F0EA /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3C72436355800B5F0EA /* ListDataSource.swift */; };
@@ -25,6 +24,10 @@
 		570AD3CE24364DD800B5F0EA /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3CD24364DD800B5F0EA /* ListTableViewCell.swift */; };
 		570AD3D9243677DA00B5F0EA /* FactsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3D8243677DA00B5F0EA /* FactsModelTest.swift */; };
 		570AD3DB2436784400B5F0EA /* FileDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3DA2436784400B5F0EA /* FileDataService.swift */; };
+		570AD3DE24367BD800B5F0EA /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 570AD3C124362E9A00B5F0EA /* sample.json */; };
+		570AD3E024367C6800B5F0EA /* ListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3DF24367C6800B5F0EA /* ListServiceTest.swift */; };
+		570AD3E224367D7B00B5F0EA /* ListDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3E124367D7B00B5F0EA /* ListDataSourceTest.swift */; };
+		570AD3E424367F5600B5F0EA /* ListModelViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570AD3E324367F5600B5F0EA /* ListModelViewTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		570AD3CD24364DD800B5F0EA /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		570AD3D8243677DA00B5F0EA /* FactsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModelTest.swift; sourceTree = "<group>"; };
 		570AD3DA2436784400B5F0EA /* FileDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataService.swift; sourceTree = "<group>"; };
+		570AD3DF24367C6800B5F0EA /* ListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceTest.swift; sourceTree = "<group>"; };
+		570AD3E124367D7B00B5F0EA /* ListDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSourceTest.swift; sourceTree = "<group>"; };
+		570AD3E324367F5600B5F0EA /* ListModelViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModelViewTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				570AD3A72436183D00B5F0EA /* CTSAssignmentTests.swift */,
+				570AD3E324367F5600B5F0EA /* ListModelViewTest.swift */,
+				570AD3E124367D7B00B5F0EA /* ListDataSourceTest.swift */,
+				570AD3DF24367C6800B5F0EA /* ListServiceTest.swift */,
 				570AD3D8243677DA00B5F0EA /* FactsModelTest.swift */,
 				570AD3C124362E9A00B5F0EA /* sample.json */,
 				570AD3A92436183D00B5F0EA /* Info.plist */,
@@ -263,6 +272,7 @@
 			files = (
 				570AD39D2436183C00B5F0EA /* LaunchScreen.storyboard in Resources */,
 				570AD39A2436183C00B5F0EA /* Assets.xcassets in Resources */,
+				570AD3DE24367BD800B5F0EA /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570AD3C224362E9B00B5F0EA /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +312,9 @@
 			files = (
 				570AD3A82436183D00B5F0EA /* CTSAssignmentTests.swift in Sources */,
 				570AD3D9243677DA00B5F0EA /* FactsModelTest.swift in Sources */,
+				570AD3E224367D7B00B5F0EA /* ListDataSourceTest.swift in Sources */,
+				570AD3E424367F5600B5F0EA /* ListModelViewTest.swift in Sources */,
+				570AD3E024367C6800B5F0EA /* ListServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
