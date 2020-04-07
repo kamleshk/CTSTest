@@ -24,13 +24,10 @@ final class ParserHelper {
 	static func parse<T: Parceable>(data: Data, completion : (Result<[T], ErrorResult>) -> Void) {
 		
 		do {
-			
+			// Serialization of data
 			if let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [AnyObject] {
 				
-				// init final result
-				var finalResult : [T] = []
-				
-				
+				var finalResult : [T] = [] // array intilizing
 				for object in result {
 					if let dictionary = object as? [String : AnyObject] {
 						
