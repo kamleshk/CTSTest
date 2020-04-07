@@ -8,10 +8,14 @@
 
 import Foundation
 
+
+/// Protocol for fetching api data from given API
 protocol FactServiceProtocol : class {
     func fetchFactsList(_ completion: @escaping ((Result<Facts, ErrorResult>) -> Void))
 }
 
+
+/// Class for fetching  all data from dropbox api
 final class FactListService : RequestHandler, FactServiceProtocol {
     
     static let shared = FactListService()
@@ -26,7 +30,8 @@ final class FactListService : RequestHandler, FactServiceProtocol {
             self.networkResult(completion: completion)
         )
     }
-    // for cancelling request
+    
+    /// Cancelling api request which is running
     func cancelFetchCurrencies() {
         if let task = task {
             task.cancel()
