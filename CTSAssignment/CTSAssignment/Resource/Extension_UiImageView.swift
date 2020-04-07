@@ -13,7 +13,7 @@ import UIKit
 let imageCache = NSCache<NSString, AnyObject>()
 
 /// UIImageview extension
-/// Description - Adding a API request for downloading images from server , where user acan directely pass image URL
+/// Description - method for adding image download
 
 extension UIImageView {
 	
@@ -34,7 +34,7 @@ extension UIImageView {
 				print(error!)
 				return
 			}
-			//            populating Imageview with image data which we had from service or api to Cache on mainthread
+			//  populating Imageview with image data which we had from service or api to Cache on mainthread
 			DispatchQueue.main.async {
 				if let image = UIImage(data: data!) {
 					imageCache.setObject(image, forKey: urlString as NSString)

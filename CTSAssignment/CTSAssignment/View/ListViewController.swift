@@ -20,6 +20,7 @@ class ListViewController: UIViewController {
 		let viewModel = ListViewModel(service: FactListService(), dataSource: dataSource)
 		return viewModel
 	}()
+	
 	/// IInitilisation of tableview and setting estamated height for each cell
 	var tableView: UITableView = {
 		let tableview = UITableView()
@@ -31,7 +32,7 @@ class ListViewController: UIViewController {
 		return tableview
 	}()
 	
-	/// view controller lifecycle Methods
+	/// Viewcontroller lifecycle Methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.setupUi()

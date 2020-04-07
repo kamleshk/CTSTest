@@ -12,16 +12,13 @@ import Foundation
 /// Going to notify to all who had registerd on it
 class DynamicValue<T> {
 	
+	private var observers = [String: CompletionHandler]()
 	typealias CompletionHandler = ((T) -> Void)
-	
-	var value : T {
+	var value: T {
 		didSet {
 			self.notify()
 		}
 	}
-	
-	private var observers = [String: CompletionHandler]()
-	
 	init(_ value: T) {
 		self.value = value
 	}
@@ -34,7 +31,7 @@ class DynamicValue<T> {
 		observers[observer.description] = completionHandler
 	}
 	
-	/// Listiners
+	/// Listeners
 	/// - Parameters:
 	///   - observer: any class which is derived from nsobject class (any value which is observing it)
 	///   - completionHandler: closers function
