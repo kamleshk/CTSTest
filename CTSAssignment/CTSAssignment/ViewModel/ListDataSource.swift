@@ -14,7 +14,10 @@ class GenericDataSource<T> : NSObject {
 }
 
 class ListDataSource : GenericDataSource<Rows>, UITableViewDataSource {
-    // data source method
+    
+    /// Tableview datasource methods
+    /// - Parameter tableView: listtableview
+    /// - Returns: number of section as integer value
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -23,18 +26,15 @@ class ListDataSource : GenericDataSource<Rows>, UITableViewDataSource {
         return data.value.count
     }
     
+    /// Method responsible for creating each cell and populating data to each cell
+    /// - Parameters:
+    ///   - tableView: own tableView
+    ///   - indexPath: indexpath for each cell
+    /// - Returns: uitableview cell ie ListTableviewCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListTableViewCell//CurrencyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListTableViewCell
         cell.rowModel = self.data.value[indexPath.row]
         return cell
     }
-    
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (UITableView.automaticDimension > 100) ? UITableView.automaticDimension : 100
-    }
-    
-
-    
-    
 }

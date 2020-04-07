@@ -20,14 +20,14 @@ struct ListViewModel {
         self.service = service
     }
     
-    // function calling list api
+    
+    ///  Method for calling or fetching dropbox data
     func fetchList() {
-        
         guard let service = service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
             return
         }
-        
+        // calling api and reloading on main thread
         service.fetchFactsList { result in
             DispatchQueue.main.async {
                 switch result {
