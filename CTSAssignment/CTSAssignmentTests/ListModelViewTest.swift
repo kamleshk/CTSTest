@@ -52,7 +52,7 @@ class ListModelViewTest: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.fetchCurrencies()
+        viewModel.fetchList()
         wait(for: [expectation], timeout: 5.0)
     }
     
@@ -71,7 +71,7 @@ class ListModelViewTest: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.fetchCurrencies()
+        viewModel.fetchList()
         wait(for: [expectation], timeout: 5.0)
     }
     
@@ -87,7 +87,7 @@ class ListModelViewTest: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.fetchCurrencies()
+        viewModel.fetchList()
         wait(for: [expectation], timeout: 5.0)
     }
 

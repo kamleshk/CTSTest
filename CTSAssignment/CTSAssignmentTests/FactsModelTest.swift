@@ -62,9 +62,8 @@ class FactsModelTest: XCTestCase {
             switch result {
             case .failure(_):
                 XCTAssert(false, "Expected valid Facts")
-            case .success(let facts): break
-                
-               XCTAssertEqual(facts.title, "About Canada", "Expected About Canada")
+            case .success(let facts):
+                XCTAssertEqual(facts.title, "About Canada", "Expected About Canada")
                XCTAssertEqual(facts.rows.count, 14, "Expected 14")
             }
         }
