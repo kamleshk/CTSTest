@@ -74,7 +74,8 @@ class ListTableViewCell: UITableViewCell {
         addconstraintsdescription(marginGuide)
    }
     
-    // property for seeting text to laable or population a cell
+    
+    /// Description
     var rowModel : Rows? {
         didSet {
             guard let rowmodel = rowModel else {  return }
