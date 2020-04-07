@@ -13,7 +13,10 @@ struct Facts {
     let rows:[Rows]
 }
 extension Facts : Parceable {
-    // parsing the response which we had got from api
+    
+    /// Protocol method for parsing and modeling a  data
+    /// - Parameter dictionary: JSON dictionary which we had got from api
+    /// - Returns: Result enum
     static func parseObject(dictionary: [String : AnyObject]) -> Result<Facts, ErrorResult> {
       if  let  title  = dictionary["title"]  as? String,
           let rows = dictionary["rows"] as? [[String:AnyObject]] {
@@ -30,6 +33,7 @@ extension Facts : Parceable {
     
 }
 
+/// Hold model for each Facts for Dropbox Api
 struct Rows {
     let title:String
     let description:String
