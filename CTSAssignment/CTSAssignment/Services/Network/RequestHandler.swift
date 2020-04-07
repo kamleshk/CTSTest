@@ -12,6 +12,9 @@ import Foundation
 class RequestHandler {
 
     
+    /// PRequestHandler this method used for getting model array in result  with error
+    /// - Parameter completion: handale parsed data
+    /// - Returns: returns json data
     func networkResult<T: Parceable>(completion: @escaping ((Result<[T], ErrorResult>) -> Void)) ->
         ((Result<Data, ErrorResult>) -> Void) {
             
@@ -32,6 +35,9 @@ class RequestHandler {
             }
     }
     
+    /// PRequestHandler this method used for getting model  in result  with error
+    /// - Parameter completion: returns parsed data
+    /// - Returns: returns json data
     func networkResult<T: Parceable>(completion: @escaping ((Result<T, ErrorResult>) -> Void)) ->
         ((Result<Data, ErrorResult>) -> Void) {
             

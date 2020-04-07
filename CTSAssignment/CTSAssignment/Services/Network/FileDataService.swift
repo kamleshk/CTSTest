@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// For testing purpose with local data
 final class FileDataService : FactServiceProtocol {
     
     static let shared = FileDataService()

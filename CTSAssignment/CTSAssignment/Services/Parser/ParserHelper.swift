@@ -14,6 +14,11 @@ protocol Parceable {
 
 final class ParserHelper {
     
+    
+    /// Method for parsing api Data which is apected to be in array or model
+    /// - Parameters:
+    ///   - data: api response data
+    ///   - completion: completion  aprsed result Model
     static func parse<T: Parceable>(data: Data, completion : (Result<[T], ErrorResult>) -> Void) {
         
         do {
@@ -50,6 +55,11 @@ final class ParserHelper {
         }
     }
     
+    
+    /// Method for  json serilization  which is be keyvalue pair
+    /// - Parameters:
+    ///   - data: api request data
+    ///   - completion: result as model or error
     static func parse<T: Parceable>(data: Data, completion : (Result<T, ErrorResult>) -> Void) {
         
         do {
