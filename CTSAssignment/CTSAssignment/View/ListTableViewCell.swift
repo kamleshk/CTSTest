@@ -32,6 +32,7 @@ class ListTableViewCell: UITableViewCell {
 		contentView.addSubview(nameLabel) /// Adding title label in  cell container
 		contentView.addSubview(detailLabel) /// Adding sublabel or description label in cell container
 		addConstraints() // adding contarints on all subview which added on cell container
+		self.selectionStyle = .none
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -75,7 +76,7 @@ class ListTableViewCell: UITableViewCell {
 	
 	/// Grouping all subviews Autolayout costarints
 	private func addConstraints() {
-		contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+		contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 110).isActive = true
 		let marginGuide = contentView.layoutMarginsGuide
 		addCOnstraintsImageView(marginGuide)
 		addconstraintsTitltLbl(marginGuide)
