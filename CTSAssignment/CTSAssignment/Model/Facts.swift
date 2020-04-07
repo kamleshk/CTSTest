@@ -20,9 +20,8 @@ extension Facts: Parceable {
 	static func parseObject(dictionary: [String : AnyObject]) -> Result<Facts, ErrorResult> {
 		if  let  title  = dictionary["title"]  as? String,
 			let rows = dictionary["rows"] as? [[String:AnyObject]] {
-			
 			let finalRates : [Rows] = rows.compactMap { (dict) -> Rows? in
-				return Rows(title: dict["title"] as? String ?? "", description: dict["description"] as? String ?? "", imageHref: dict["imageHref"] as? String ?? "")
+				return Rows(title: dict["title"] as? String ?? "NA", description: dict["description"] as? String ?? "NA", imageHref: dict["imageHref"] as? String ?? "")
 			}
 			let facts = Facts(title: title, rows: finalRates)
 			return Result.success(facts)
